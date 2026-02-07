@@ -97,3 +97,44 @@ def agent_card():
         ]
     }
 
+@app.get("/.well-known/agent-card.json")
+def agent_card_main():
+    return {
+        "name": "Web3 Multi-Agent Assistant",
+        "description": "A friendly AI assistant for Web3, finance research, monitoring, and content support.",
+        "version": "1.0.0",
+        "skills": ["web3_research", "market_monitoring", "summarization", "content_support"],
+        "endpoints": {
+            "oasf": "/oasf",
+            "chat": "/oasf/chat"
+        }
+    }
+
+
+@app.get("/.well-known/agent-card-research.json")
+def agent_card_research():
+    return {
+        "name": "Web3 Research Agent",
+        "description": "Focused on Web3 and finance research, trend scanning, and turning news into clear insights.",
+        "version": "1.0.0",
+        "skills": ["web_search", "market_intel", "onchain_analysis", "summarization"],
+        "endpoints": {
+            "oasf": "/oasf",
+            "chat": "/oasf/chat"
+        }
+    }
+
+
+@app.get("/.well-known/agent-card-content.json")
+def agent_card_content():
+    return {
+        "name": "Web3 Content Agent",
+        "description": "Helps write clean, human content for Web3 topics, including posts, threads, summaries, and scripts.",
+        "version": "1.0.0",
+        "skills": ["copywriting", "thread_writing", "rewriting", "content_optimization"],
+        "endpoints": {
+            "oasf": "/oasf",
+            "chat": "/oasf/chat"
+        }
+    }
+
